@@ -48,10 +48,9 @@ button{
     column-gap: .5rem;
 }
 .card{
-    max-width: 380px;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 h1,
 .card-discount{
@@ -79,11 +78,7 @@ p{
 .card img{
     border-radius: 1rem 1rem 0 0;
 }
-.card div:first-child{
-    flex: 2;
-}
 .card div:last-child{
-    flex: 1;
     background-color: var(--body-color);
     margin-top: -1rem;
     padding: 1.5rem;
@@ -102,4 +97,23 @@ p{
 .card-price{
     color: var(--text-color);
     text-decoration: line-through;
+}
+@media screen and (min-width: 600px) {
+    .card{
+        max-width: 500px;
+        display: grid;
+        grid-template-columns: repeat(2, .918fr);
+    }
+    .card img{
+        border-radius: 1rem 0 0 1rem;
+        height: 100%;
+        object-fit: cover;
+    }
+    .card div:last-child{
+        background-color: var(--body-color);
+        border-radius: 0 1rem 1rem 0;
+        margin-top: 0;
+        
+    }
+    
 }
